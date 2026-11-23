@@ -81,6 +81,7 @@ h1 span { display: block; color: #ffe1bd; font-style: italic; }
 .site-nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: .35rem;
   padding: .3rem;
   border: 1px solid #ffffff26;
@@ -139,4 +140,48 @@ a:focus-visible {
 .page-link, .contact-address { color: #ffe1bd; }
 .page-link { text-underline-offset: .25em; }
 .contact-address small { color: #fff4f8; }
+
+.gallery-page {
+  align-content: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #ffffff26;
+  border-radius: 1rem;
+  background: #161525;
+}
+
+.gallery-art {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #44305f, #131222 75%);
+}
+
+.gallery-art .orb {
+  position: relative;
+  inset: auto;
+  width: 55%;
+  animation: none;
+}
+
+.gallery-art--amber .orb { filter: hue-rotate(65deg); }
+.gallery-art--blue .orb { filter: hue-rotate(-65deg); }
+
+.gallery-grid figcaption {
+  padding: .85rem 1rem;
+  color: #ffe1bd;
+}
 
